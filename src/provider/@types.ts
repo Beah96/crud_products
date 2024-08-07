@@ -1,15 +1,9 @@
+import { TRegisterData } from "../components/userForms/register/registerSchema"
+
 export interface TLogin {
     taxNumber: string
     password: string
 }
-export interface TRegister {
-    name: string
-    taxNumber: string
-    mail: string
-    phone: string
-    password: string
-}
-
 export interface IProduct {
     name: string
     description: string
@@ -18,7 +12,7 @@ export interface IProduct {
 }
 export interface IGlobalContextProps {
     login: (formData: TLogin) => Promise<void>,
-    registerUser: (formData: TRegister) => Promise<void>,
+    registerUser: (formData: TRegisterData) => Promise<void>,
     createProduct: (formData: IProduct) => Promise<void>,
     getProducts: () => Promise<void>,
     getProductbyID: (id: number) => Promise<void>,
